@@ -1,10 +1,26 @@
 import { View, Text, Dimensions, TouchableOpacity } from 'react-native'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Ionicons from '@expo/vector-icons/Ionicons'
 import axios from 'axios'
 
 const { width, height } = Dimensions.get('window')
 const Home = () => {
+    const [data, setData] = useState([])
+
+    const getData = async () => {
+        try {
+            let res = await axios.get('https://dummyjson.com/products');
+            console.log(res.data.products);
+            setData(res.data.products)
+        } catch (error) {
+            alert(error.message)
+        }
+    }
+
+    useEffect(() => {
+        getData()
+    }, [])
+
     return (
         <View>
             <View
