@@ -7,6 +7,7 @@ import Home from './Src/Screens/Home';
 export default function App() {
   return (
     <SafeAreaView>
+      <StatusBar backgroundColor='#008080'/>
       <Home />
     </SafeAreaView>
   );
