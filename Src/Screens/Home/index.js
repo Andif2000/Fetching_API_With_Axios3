@@ -1,4 +1,4 @@
-import { View, Text, Dimensions, TouchableOpacity, FlatList } from 'react-native'
+import { View, Text, Dimensions, TouchableOpacity, FlatList, Image } from 'react-native'
 import React, { useEffect, useState, version } from 'react'
 import Ionicons from '@expo/vector-icons/Ionicons'
 import axios from 'axios'
@@ -27,12 +27,38 @@ const Home = () => {
             <View
                 style={{
                     width: width / 2.2,
-                    height: 250,
+                    height: 270,
                     backgroundColor: '#fff',
-                    margin: 2.5
+                    margin: 2.5,
+                    // padding: 5
                 }}>
-                <View>
-                    <Text>{item.id}</Text>
+                <View
+                    style={{
+                        alignItems: 'center'
+                    }}>
+                    <Image
+                        source={{ uri: item.thumbnail }}
+                        style={{ width: 180, height: 185 }} />
+                </View>
+                <View
+                    style={{ padding: 3 }}>
+                    {
+                        item.title.lenght > 16 ?
+                            (
+                                <Text
+                                    style={{
+                                        fontSize: 17,
+                                        fontWeight: 'bold'
+                                    }}>{item.title}</Text>
+                            ) :
+                            (
+                                <Text
+                                    style={{
+                                        fontSize: 17,
+                                        fontWeight: 'bold'
+                                    }}>{item.title}</Text>
+                            )
+                    }
                 </View>
             </View>
         )
@@ -90,6 +116,7 @@ const Home = () => {
                     data={data}
                     renderItem={renderData}
                     numColumns={2}
+                    showsVerticalScrollIndicator={false}
                 />
             </View>
         </View>
