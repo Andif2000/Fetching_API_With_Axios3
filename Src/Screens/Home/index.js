@@ -33,13 +33,13 @@ const Home = () => {
                     padding: 3,
                     borderRadius: 5,
                     borderWidth: 2,
-                    borderColor:'#006400'
+                    borderColor: '#006400'
                 }}>
                 <View
                     style={{
                         alignItems: 'center',
-                        borderWidth:2,
-                        borderColor:'#556B2F'
+                        borderWidth: 2,
+                        borderColor: '#556B2F'
                     }}>
                     <Image
                         source={{ uri: item.thumbnail }}
@@ -48,23 +48,37 @@ const Home = () => {
                 <View
                     style={{ padding: 3 }}>
                     {
-                        item.title.lenght > 16 ?
-                            (
-                                <Text
-                                    style={{
-                                        fontSize: 17,
-                                        fontWeight: 'bold'
-                                    }}>{item.title}</Text>
-                            ) :
-                            (
-                                <Text
-                                    style={{
-                                        fontSize: 17,
-                                        fontWeight: 'bold'
-                                    }}>{item.title}</Text>
-                            )
+                        item.title.lenght < 20 ?
+
+                            <Text
+                                style={{
+                                    fontSize: 17,
+                                    fontWeight: 'bold'
+                                }}>{item.title}</Text>
+                            :
+                            <Text
+                                style={{
+                                    fontSize: 17,
+                                    fontWeight: 'bold'
+                                }}>{item.title.substr(0, 20)}</Text>
                     }
                 </View>
+                <View>
+                    <Rating
+                        // type='start'
+                        ratingCount={5}
+                        imageSize={15}
+                        startingValue={item.rating}
+                        style={{ marginLeft: -85 }}
+                    />
+                </View>
+                <Text
+                    style={{
+                        fontSize: 18,
+                        fontWeight: '600',
+                        textAlign: 'right',
+                        paddingRight: 10
+                    }}>Rp {item.price}K</Text>
             </TouchableOpacity>
         )
     }
@@ -129,9 +143,3 @@ const Home = () => {
 }
 
 export default Home
-{/* <Rating
-                // type='start'
-                ratingCount={10}
-                imageSize={30}
-                minValue={data.rating}
-            /> */}
