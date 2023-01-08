@@ -65,7 +65,6 @@ const Home = () => {
                 </View>
                 <View>
                     <Rating
-                        // type='start'
                         ratingCount={5}
                         imageSize={15}
                         startingValue={item.rating}
