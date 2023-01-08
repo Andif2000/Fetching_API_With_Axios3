@@ -24,21 +24,26 @@ const Home = () => {
 
     const renderData = ({ index, item }) => {
         return (
-            <View
+            <TouchableOpacity
                 style={{
                     width: width / 2.2,
                     height: 270,
                     backgroundColor: '#fff',
                     margin: 2.5,
-                    // padding: 5
+                    padding: 3,
+                    borderRadius: 5,
+                    borderWidth: 2,
+                    borderColor:'#006400'
                 }}>
                 <View
                     style={{
-                        alignItems: 'center'
+                        alignItems: 'center',
+                        borderWidth:2,
+                        borderColor:'#556B2F'
                     }}>
                     <Image
                         source={{ uri: item.thumbnail }}
-                        style={{ width: 180, height: 185 }} />
+                        style={{ width: '100%', height: 185 }} />
                 </View>
                 <View
                     style={{ padding: 3 }}>
@@ -60,7 +65,7 @@ const Home = () => {
                             )
                     }
                 </View>
-            </View>
+            </TouchableOpacity>
         )
     }
 
