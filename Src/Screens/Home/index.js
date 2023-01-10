@@ -3,9 +3,11 @@ import React, { useEffect, useState, version } from 'react'
 import Ionicons from '@expo/vector-icons/Ionicons'
 import axios from 'axios'
 import { Rating, AirbnbRating } from 'react-native-ratings'
+import { useNavigation } from '@react-navigation/native'
 
 const { width, height } = Dimensions.get('window')
 const Home = () => {
+    const navigation = useNavigation();
     const [data, setData] = useState([])
 
     const getData = async () => {
@@ -25,6 +27,11 @@ const Home = () => {
     const renderData = ({ index, item }) => {
         return (
             <TouchableOpacity
+                onPress={() => navigation.push("ItemDetails",
+                    {
+                        name: item.title,
+                    })
+                }
                 style={{
                     width: width / 2.2,
                     height: 270,
