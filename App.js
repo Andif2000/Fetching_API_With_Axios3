@@ -1,15 +1,27 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-
+import { NavigationContainer } from '@react-navigation/native';
 import Home from './Src/Screens/Home';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import ItemDetails from './Src/Components/ItemDetails';
 
 export default function App() {
+  const Stack = createNativeStackNavigator();
   return (
-    <SafeAreaView>
-      <StatusBar backgroundColor='#008080'/>
-      <Home />
-    </SafeAreaView>
+    <NavigationContainer>
+      <SafeAreaView>
+        <StatusBar backgroundColor='#008080' />
+        <Home />
+      </SafeAreaView>
+      <Stack.Navigator
+        screenOptions={{
+          headerShown: false
+        }
+        }>
+        <Stack.Screen name='ItemDetails' component={ItemDetails} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
