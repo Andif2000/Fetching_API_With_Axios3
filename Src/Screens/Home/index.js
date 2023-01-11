@@ -27,11 +27,11 @@ const Home = () => {
     const renderData = ({ index, item }) => {
         return (
             <TouchableOpacity
-                onPress={() => navigation.push("ItemDetails",
-                    {
-                        name: item.title,
+                onPress={() => {
+                    navigation.navigate('ItemDetails', {
+                        name: item.title
                     })
-                }
+                }}
                 style={{
                     width: width / 2.2,
                     height: 270,
