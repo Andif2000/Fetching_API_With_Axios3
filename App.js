@@ -7,20 +7,25 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import ItemDetails from './Src/Components/ItemDetails';
 
 export default function App() {
-  const Stack = createNativeStackNavigator();
+  const Stack = createNativeStackNavigator(
+    {
+      Home: Home,
+      ItemDetails: ItemDetails
+    }
+  );
   return (
     <NavigationContainer>
       <SafeAreaView>
         <StatusBar backgroundColor='#008080' />
         <Home />
+        <Stack.Navigator
+          screenOptions={{
+            headerShown: false
+          }
+          }>
+          <Stack.Screen name='ItemDetails' component={ItemDetails} />
+        </Stack.Navigator>
       </SafeAreaView>
-      <Stack.Navigator
-        screenOptions={{
-          headerShown: false
-        }
-        }>
-        <Stack.Screen name='ItemDetails' component={ItemDetails} />
-      </Stack.Navigator>
     </NavigationContainer>
   );
 }
