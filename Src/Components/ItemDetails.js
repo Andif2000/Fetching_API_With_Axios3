@@ -2,9 +2,9 @@ import { View, Text } from 'react-native'
 import React from 'react'
 import { useNavigation } from '@react-navigation/native'
 
-const ItemDetails = ({ route }) => {
+const ItemDetails = (route) => {
     const navigation = useNavigation();
-    // const { title } = route.params; 
+    const { name } = route.params
     return (
         <View>
             <Text></Text>
