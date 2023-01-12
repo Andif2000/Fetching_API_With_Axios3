@@ -2,7 +2,7 @@ import { View, Text, Dimensions, TouchableOpacity, FlatList, Image } from 'react
 import React, { useEffect, useState, version } from 'react'
 import Ionicons from '@expo/vector-icons/Ionicons'
 import axios from 'axios'
-import { Rating, AirbnbRating } from 'react-native-ratings'
+import { Rating } from 'react-native-ratings'
 import { useNavigation } from '@react-navigation/native'
 
 const { width, height } = Dimensions.get('window')
