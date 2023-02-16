@@ -4,7 +4,7 @@ import { useNavigation } from '@react-navigation/native'
 
 const ItemDetails = (route) => {
     const navigation = useNavigation();
-    const { name } = route.params
+    // const { name } = route.params
     return (
         <View>
             <Text></Text>
