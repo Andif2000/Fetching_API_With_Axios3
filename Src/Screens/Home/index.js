@@ -88,7 +88,6 @@ const Home = () => {
             </TouchableOpacity>
         )
     }
-
     return (
         <View>
             <View
