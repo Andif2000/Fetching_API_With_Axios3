@@ -7,12 +7,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import ItemDetails from './Src/Components/ItemDetails';
 
 export default function App() {
-  const Stack = createNativeStackNavigator(
-    {
-      Home: Home,
-      ItemDetails: ItemDetails
-    }
-  );
+  const Stack = createNativeStackNavigator();
   return (
     <NavigationContainer>
       <SafeAreaView>
